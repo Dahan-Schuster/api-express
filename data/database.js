@@ -1,4 +1,6 @@
 const fs = require('fs') // imports the file system module
+const scheduler = require('node-schedule') // scheduler to backup the database
+const { exec } = require('child_process') // module for running shell/bash using node
 const path = __dirname + '/products.json' // the path to the products json
 
 let products
@@ -6,7 +8,7 @@ let products
 try {
     products = require('./products.json')
 } catch (error) {
-    products = {lastId: 0}
+    products = { lastId: 0 }
 }
 
 /**
@@ -16,7 +18,7 @@ const sequence = {
     _id: products.lastId,
 
     get id() {
-        return ++this._id 
+        return ++this._id
     }
 }
 
@@ -35,7 +37,7 @@ const saveProduct = product => {
     products[product.id] = product
     _writeProducts()
     return product
-} 
+}
 
 /**
  * Write all the products object in the json file
@@ -61,11 +63,18 @@ const deleteProductById = id => {
     delete products[id]
     _writeProducts()
     return product
-} 
+}
 
 /**
  * Returns all the values from the products object
  */
 const getProducts = () => Object.values(products)
+
+scheduler.scheduleJob('* * * * *', function () {
+    exec(
+        'git add data/database.js && git commit -m "Backuping database" && git fetch',
+        error => error ? console.error(err) : null
+    )
+})
 
 module.exports = { saveProduct, getProductById, getProducts, deleteProductById }
