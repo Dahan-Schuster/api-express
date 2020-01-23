@@ -52,8 +52,20 @@ function _writeProducts() {
 const getProductById = id => products[id] || {}
 
 /**
+ * Returns an product from the products object
+ * 
+ * @param {number} id 
+ */
+const deleteProductById = id => {
+    const product = getProductById(id)
+    delete products[id]
+    _writeProducts()
+    return product
+} 
+
+/**
  * Returns all the values from the products object
  */
 const getProducts = () => Object.values(products)
 
-module.exports = { saveProduct, getProductById, getProducts }
+module.exports = { saveProduct, getProductById, getProducts, deleteProductById }
