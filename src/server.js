@@ -54,4 +54,8 @@ app.put('/products/:id', (req, res, next) => {
     )
 })
 
+app.delete('/products/:id', (req, res, next) => {
+    res.send(database.deleteProductById(req.params.id))
+}) 
+
 app.listen(port, () => console.log(`Server running at port ${port}`))
