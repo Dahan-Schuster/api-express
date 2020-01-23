@@ -1,10 +1,10 @@
 const port = 3003
-
+const database = require('../data/database')
 const express = require('express')
 const app = express()
 
 app.get('/products', (request, response) => {
-    response.send(require('../files/products.json'))
+    response.send(database.getProdutos())
 })
 
 
