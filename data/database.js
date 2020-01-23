@@ -1,7 +1,13 @@
 const fs = require('fs') // imports the file system module
 const path = __dirname + '/products.json' // the path to the products json
 
-let products = require('./products.json')
+let products
+
+try {
+    products = require('./products.json')
+} catch (error) {
+    products = {lastId: 0}
+}
 
 /**
  * gives an ID and increment it, so the next ID will be ID + 1
@@ -35,7 +41,7 @@ const saveProduct = product => {
  * Write all the products object in the json file
  */
 function _writeProducts() {
-    fs.writeFile(path, JSON.stringify(products), error => console.log('Error:', error))
+    fs.writeFile(path, JSON.stringify(products), error => error ? console.log('Error:', error) : null)
 }
 
 /**
