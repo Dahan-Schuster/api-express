@@ -4,7 +4,7 @@ const express = require('express')
 const app = express()
 
 app.get('/products', (request, response) => {
-    response.send(database.getProdutos())
+    response.send(database.getProducts())
 })
 
 

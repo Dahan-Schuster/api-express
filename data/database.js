@@ -6,16 +6,16 @@ const sequence = {
     }
 }
 
-const produtos = {}
+const products = {}
 
-const salvarProduto = produto => {
-    if (!produto.id) produto.id = sequence.id
-    produtos[produto.id] = produto
-    return produto
+const saveProduct = product => {
+    if (!product.id) product.id = sequence.id
+    products[product.id] = product
+    return product
 } 
 
-const getProdutoById = id => produtos[id] || {}
+const getProductById = id => products[id] || {}
 
-const getProdutos = () => Object.values(produtos)
+const getProducts = () => Object.values(products)
 
-module.exports = { salvarProduto, getProdutoById, getProdutos }
+module.exports = { saveProduct, getProductById, getProducts }
