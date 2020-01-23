@@ -72,8 +72,8 @@ const getProducts = () => Object.values(products)
 
 scheduler.scheduleJob('* * * * *', function () {
     exec(
-        'git add data/database.js && git commit -m "Backuping database" && git fetch',
-        error => error ? console.error(err) : null
+        'git pull origin master && git add data/products.json && git commit -m "Backuping database" && git push origin master',
+        error => null
     )
 })
 
