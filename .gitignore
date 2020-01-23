@@ -1,3 +1,6 @@
+# Don't need to keep updating the products.json...
+data/products.json
+
 # Logs
 logs
 *.log
