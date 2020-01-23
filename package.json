@@ -2,8 +2,9 @@
   "name": "projeto-api-express",
   "version": "1.0.0",
   "description": "Simple API made with Node and the Express library, focusing on learning these technologies",
-  "main": "index.js",
+  "main": "src/server.js",
   "scripts": {
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,8 +14,11 @@
     "url": "https://github.com/Dahan-Schuster/api-express"
   },
   "homepage": "https://github.com/Dahan-Schuster/api-express#readme",
-  "license" : "SEE LICENSE IN 'LICENSE'",
+  "license": "SEE LICENSE IN 'LICENSE'",
   "dependencies": {
     "express": "4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "1.14.11"
   }
 }
