@@ -1,0 +1,30 @@
+[
+    {
+        "name" : "Smartphone",
+        "price" : 999.90
+    },
+    {
+        "name" : "TV",
+        "price" : 1190.00
+    },
+    {
+        "name" : "Mouse",
+        "price" : 44.99
+    },
+    {
+        "name" : "Keyboard",
+        "price" : 119.90
+    },
+    {
+        "name" : "Headphone",
+        "price" : 81.75
+    },
+    {
+        "name" : "Ubuntu Keyring",
+        "price" : 25
+    },
+    {
+        "name" : "JavaScript Cup",
+        "price" : 14.99
+    }
+]
