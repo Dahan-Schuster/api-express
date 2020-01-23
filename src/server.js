@@ -44,4 +44,14 @@ app.post('/products', (req, res, next) => {
     )
 })
 
+app.put('/products/:id', (req, res, next) => {
+    res.send(
+        database.saveProduct({
+            name: req.body.name,
+            price: req.body.price,
+            id: Number.parseInt(req.params.id)
+        })
+    )
+})
+
 app.listen(port, () => console.log(`Server running at port ${port}`))
