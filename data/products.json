@@ -1,3 +1,1 @@
-{
-    "lastId": 1
-}
+{"1":{"name":"TV","price":"1200","id":1},"2":{"name":"Smartphone","price":"999","id":2},"3":{"name":"Notebook","price":"2500","id":3},"4":{"name":"Ubuntu Keyring","price":"25","id":4},"5":{"name":"JS Cup","price":"30","id":5},"lastId":5}
